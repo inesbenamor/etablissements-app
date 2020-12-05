@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:text="Les données chargées ont été récupérées par le biais de tableaux de String définis dans la class ListFragment. N'ayant pas réussi à déployer les données sur Clevercloud, nous n'avons pu les récupérer via des requêtes HTTP."
+        android:textSize="40dp"/>
+
+</RelativeLayout>
