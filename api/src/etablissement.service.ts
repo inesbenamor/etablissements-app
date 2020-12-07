@@ -62,18 +62,6 @@ export class EtablissementService implements OnModuleInit {
     return Array.from(this.etablissements.values());
   }
 
-/*
-  async addToFavori(uai: string): Promise<Etablissement> {
-    for (let i = 0; i < this.etablissements.size; i++){
-      console.log(`Boucle for`);
-      if ((this.etablissements[i].uai = uai) &&(this.etablissements[i].favori = "false")) {
-        this.etablissements[i].set(this.etablissements[i].favori, "true");
-        console.log(`Boucle if`);
-      }
-    }
-    return this.etablissements.get(uai);
-    console.log(`Return`);
-  }*/
 
   async addToFavori(uai: string): Promise<Etablissement> {
 
