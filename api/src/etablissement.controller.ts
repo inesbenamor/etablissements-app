@@ -1,34 +1,36 @@
-import { Controller, Get, Param, Put, Body } from '@nestjs/common';
+import { Controller, Get, Param, Put, Body, Query, Post } from '@nestjs/common';
 import { EtablissementService } from './etablissement.service';
 import { Etablissement } from './Etablissement';
 
 
-@Controller('/etablissements')
+@Controller()
 export class EtablissementController {
   constructor(private readonly etablissementService: EtablissementService) {}
   
-  @Get('/data')
-  getData()  {
-    return this.etablissementService.getData();
-  }
-  
+
+  // Ajouter requêtes: addEtablissement, getEtablissement, 
+
+  /*@Post()
+  createEtablissement(@Body() newEtablissement: Etablissement): Etablissement {
+    this.etablissementService.addEtablissement(newEtablissement);
+    return this.etablissementService.getEtablissement(newEtablissement.uai);
+  }*/
+
   @Get()
   getEtablissements(){
     return this.etablissementService.getAllEtablissements();
   }
 
-  /*@Get('/:uai')
-  async getEtablissement(@Param('uai') uai : string) {
-    return this.etablissementService.getEtablissement(uai);
-  }*/
 
   @Get('/:uai')
-  async getEtablissement(@Param('uai') uai : string) {
+  async getEtablissementsD(@Param('uai') uai : string) {
     return this.etablissementService.getEtablissementDetail(uai);
   }
 
+
   @Put('/:uai')
-  addToFavori(@Param('uai') uai : string, @Body() favo : boolean) : Promise<Etablissement> {
-    return this.etablissementService.addToFavori(uai,favo);
+  addToFavori(@Param('uai') uai : string){
+    return this.etablissementService.addToFavori(uai);
   }
+  
 }
